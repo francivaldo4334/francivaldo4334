@@ -2,7 +2,7 @@
 <div>
   <a href="https://beacons.io/francivaldo4334">
   <img height="180em" src="https://github-readme-stats.vercel.app/api?username=francivaldo4334&show-icons=true&theme=dracula&include-all-commits=true&count-private=false"/>
-  <img height="180em" src=""/>
+  <img height="180em" src="https://github-readme-stats.vercel.app/api/top-langs/?username=francivaldo4334&layout=compact&langs-count=16&theme=dracula"/>
 </div>
 <div style="display: inline_block"><br>
   <img align="center" alt="Rafa-Js" height="30" width="40" src="https://raw.githubusercontent.com/devicons/devicon/master/icons/javascript/javascript-plain.svg">
