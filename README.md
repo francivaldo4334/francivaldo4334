@@ -1,5 +1,9 @@
 ## Oiii eu sou a Francivaldo Costa,programador e amante de tecnologia!
-
+<div>
+  <a href="https://beacons.io/francivaldo4334">
+  <img height="180em" src="https://github-readme-stats.vercel.app/api?username=francivaldo4334&show-icons=true&theme=dracula&include-all-commits=true&count-private=false"/>
+  <img height="180em" src=""/>
+</div>
 <div style="display: inline_block"><br>
   <img align="center" alt="Rafa-Js" height="30" width="40" src="https://raw.githubusercontent.com/devicons/devicon/master/icons/javascript/javascript-plain.svg">
   <img align="center" alt="Rafa-Ts" height="30" width="40" src="https://raw.githubusercontent.com/devicons/devicon/master/icons/typescript/typescript-plain.svg">
