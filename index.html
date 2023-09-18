@@ -3,7 +3,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>francivaldo</title>
+    <link rel="shortcut icon" type="image/svg" href="./assets/logo.svg">
     <link rel="stylesheet" type="text/css" href="style.css"/>
 </head>
 <body>
@@ -30,16 +31,36 @@
         <h3>Plicativos na Play Store</h3>
         <ul id="apps">
             <li>
-                <div>
-                    <img/>
+                <a href="https://play.google.com/store/apps/details?id=br.com.fcr.gastin">
                     <div>
-                        <div>
-                            <img/>
-                            <h4>Nome</h4>
-                        </div>
-                        <h5>Descricao</h5>
+                        <img src="https://play-lh.googleusercontent.com/ABZ3vIu4IVZtdwzBxRxxTwFqNhjdxp32x-esx2Ah5E5vMQEZgj7-HJHs3ncQ0JJdcPE=w240-h480"/>
+                        <h4>Gastin Pro</h4>
                     </div>
-                </div>
+                </a>
+            </li>
+            <li>
+                <a href="https://play.google.com/store/apps/details?id=com.francivaldo.plumodigital">
+                    <div>
+                        <img src="https://play-lh.googleusercontent.com/I_qSKyVXPSLD5EONhWd4fQOrmZ_gP4EcgjU-aiAGh5a7L30xVb5K5U-_CrdpZG8RaktB=w240-h480"/>
+                        <h4>Prumo Digital</h4>
+                    </div>
+                </a>
+            </li>
+            <li>
+                <a href="https://play.google.com/store/apps/details?id=com.francivaldo.drausioacademia">
+                    <div>
+                        <img src="https://play-lh.googleusercontent.com/9s3sl5F07QhjayyZVj5V_J2p0mWNQ-dmZ7fdn5MOgrXFQ-PgGQL31oVvdb5uR9_-Yxo=w240-h480"/>
+                        <h4>Drausio Academia</h4>
+                    </div>
+                </a>
+            </li>
+            <li>
+                <a href="https://play.google.com/store/apps/details?id=br.com.francis.qrcode">
+                    <div>
+                        <img src="https://play-lh.googleusercontent.com/f-GKBXG7rhkZfvDEf5G5tXIOL5Quuv2E0GfsW8rZ0FU-xj-pUB2Dfj0WHJ_klj5K1QE=w240-h480"/>
+                        <h4>Leitor de QR code - QR Master</h4>
+                    </div>
+                </a>
             </li>
         </ul>
     </section>
@@ -66,14 +87,15 @@
     </section>
     <section id="section5">
         <div>
-            <a><img src="assets/linkedin.svg" alt=""></a>
-            <a><img src="assets/whatsapp.svg" alt=""></a>
-            <a><img src="assets/instagram.svg" alt=""></a>
+            <a href="https://www.linkedin.com/in/francivaldo-costa/"><img src="assets/linkedin.svg" alt=""></a>
+            <a id="whatsapp"a><img src="assets/whatsapp.svg" alt=""></a>
+            <a href="https://www.instagram.com/francivaldo.programador/"><img src="assets/instagram.svg" alt=""></a>
         </div>
-        <h2>Enviar Email</h2>
-        <div>
-            <input type="text"/>
-            <button>Enviar</button>
+        <div id="links">
+            <!-- <input type="text"/>
+            <button>Enviar</button> -->
+            <h4>+55(86)981266564</h4>
+            <h4>contato@francivaldo.com.br</h4>
         </div>
     </section>
     <div id="informations">
@@ -89,10 +111,21 @@
             <li>
                 <div>
                     <img src="assets/email.svg" alt="">
-                    <h6>francivaldodev@gmal.com</h6>
+                    <h6>contato@francivaldo.com.br</h6>
                 </div>
             </li>
         </ul>
     </div>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script>
+        $(document).ready(function() {
+        const scrollDownButton = $("#whatsapp");    
+        scrollDownButton.on("click", function() {
+            var copyText = "86981266564";
+            navigator.clipboard.writeText(copyText);
+            alert("Numero copiado: " + copyText);
+        });
+    });
+    </script>
 </body>
 </html>
