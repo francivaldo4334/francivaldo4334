@@ -5,272 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>francis</title>
     <link rel="shortcut icon" type="image/svg" href="./assets/logo.svg">
-    <style>
-        .copied-notification {
-    display: none;
-    position: fixed;
-    bottom: 10px;
-    left: 50%;
-    transform: translateX(-50%);
-    padding: 10px 20px;
-    background-color: rgba(0, 0, 0, 0.8);
-    color: #fff;
-    border-radius: 5px;
-}
-@media(min-width: 769px) {
-    :root{
-        --font-max:32px;
-        --border-site: 4em;
-    }
-    #more > div{
-        display: flex;
-        margin-left: 8em;
-    }
-    #more{
-        height: 100vh;
-        padding-top: 8em;
-    }
-    #topbar button{
-        margin-right: var(--border-site);
-        padding: 1em;
-        color: white;
-        background-color: black;
-        border-style: none;
-        border-radius: 1em;
-        font-weight: bold;
-    }
-    #portifolio > h1{
-        margin: var(--border-site) 0 0 5em;
-    }
-    #portifolio > h4{
-        margin: 2em 0 var(--border-site) 8em;
-        font-weight: lighter;
-        white-space: pre-line;
-    }
-    #image-list > li{
-        padding-right: 1em;
-    }
-    #image-list > li > img{
-        height: 10em;
-        border-radius: 1em;
-        border: #DDD 1  px solid;
-    }
-    #image-list li > a > div > img{
-        width: 5em;
-    }
-    #image-list li > a >div > div > img{
-        padding-top: 0.5em;
-        height: 2em;
-    }
-    #image-list li > a >div > div{
-        color: white;
-        padding-left: 1em;
-    }
-    #image-list li > a >div{
-        background-color: black;
-        border-radius: 1em;
-        display: flex;
-        align-items: center;
-        padding: 0 2em 0 2em;
-        height: 10em;
-        width: 15em;
-        margin-left: var(--border-site);
-    }
-    #botton > div {
-        margin: 1em 0 0 1em;
-    }
-}
-@media(max-width: 769px) {
-    :root{
-        --font-max:18px;
-        --border-site: 2em;
-    }
-    a {
-        font-size: 12px;
-    }
-    h1{
-        font-size: 18px;
-    }
-    h4,h3{
-        font-size: 12px;
-    }
-    #cover > img{
-        width: 110px;
-        height: 110px;
-    }
-    #cover > ul > li{
-        width: 16px;
-        height: 16px;
-    }
-    #more > div > img{
-        visibility: hidden;
-    }
-    #more > div{
-        margin-left: 1em;
-    }
-    #more{
-        height: 100vh;
-    }
-    #topbar button{
-        margin-right: var(--border-site);
-        padding: 8px;
-        font-size: 8px;
-        color: white;
-        background-color: black;
-        border-style: none;
-        border-radius: 1em;
-        font-weight: bold;
-    }
-    #portifolio > h1{
-        margin: var(--border-site) 0 0 1em;
-    }
-    #portifolio > h4{
-        margin: 2em 2em var(--border-site) 2em;
-        font-weight: lighter;
-        white-space: pre-line;
-    }
-    #image-list > li{
-        padding-right: 16px;
-    }
-    #image-list li > a > div > img{
-        width: 2em;
-    }
-    #image-list li > a > img{
-        height: 7em;
-    }
-    #image-list li > a >div > div > img{
-        padding-top: 0.5em;
-        height: 2em;
-    }
-    #image-list li > a >div > div{
-        color: white;
-        padding-left: 1em;
-    }
-    #image-list li > a > div{
-        background-color: black;
-        border-radius: 1em;
-        display: flex;
-        align-items: center;
-        padding: 0 2em 0 2em;
-        height: 7em;
-        width: 15em;
-        margin-left: var(--border-site);
-    }
-    #botton > div {
-        font-size: 12px;
-        margin: 0;
-    }
-}
-body{
-    padding: 0;
-    margin: 0;
-    font-family: Arial, Helvetica, sans-serif;
-}
-section{
-    padding-top: 2em;
-}
-a {
-    text-decoration: none;
-    color: black;
-}
-h1,h2,h3,h4,h5{
-    margin: 0;
-}
-#topbar{
-    position: fixed;
-    display: flex;
-    width: 100%;
-    justify-content: space-between;
-    background-color: #fff;
-    align-items: end;
-    height: var(--border-site);
-}
-#topbar > ul{
-    padding: 0;
-    margin: 0 0 0 var(--border-site);
-    list-style-type: none;
-    display: flex;
-}
-#topbar > ul > li > a{
-    padding: 0 1em 0 1em;
-    height: var(--border-site);
-    font-weight: bold;
-    display: flex;
-    align-items: center;
-}
-#topbar > ul > li:hover{
-    border-bottom: black 2px solid;
-}
-#topbar button:active{
-    background-color: grey;
-}
-#cover{
-    height: 100vh;
-    display: flex;
-    align-items: center;
-    flex-direction: column;
-    justify-content: center;
-}
-#cover > ul {
-    margin: 0;
-    padding: 0;
-    list-style-type: none;
-    display: flex;
-    justify-content: space-between;
-}
-#cover > ul > li {
-    margin: 0.5em;
-}
-#cover > h4 {
-    font-weight: lighter;
-}
-#cover > h1 {
-    font-weight: bold;
-    font-size: var(--font-max);
-}
-#image-list{
-    display: flex;
-    overflow-y: auto;
-    list-style: none;
-    padding: 2em 0 2em 0;
-    border-top: #BBB 2px solid;
-}
-#portifolio{
-    height: 100vh;
-}
-#more h3{
-    white-space: pre-line;
-    font-weight: lighter;
-}
-#more > div > img{
-    margin-right: 2em;
-}
-#more > div > div {
-    display: flex;
-    flex-direction: column;
-}
-#more > div > div > img{
-    width: 50%;
-}
-#more > div > div > ul{
-    margin: 1em 0 1em 0;
-    padding: 0;
-    list-style: none;
-    display: flex;
-    align-items: center;
-    width: 50%;
-    justify-content: space-between;
-}
-#botton{
-    background-color: black;
-    color: #fff;
-    padding: 1em;
-}
-#botton > div{
-    display: flex;
-    align-items: center;
-}
-    </style>
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
     <div id="topbar">
@@ -356,23 +91,27 @@ h1,h2,h3,h4,h5{
         </div>
     </section>
     <section id="portifolio">
-        <h1>Portifolio</h1>
-        <h4>De vez em quando gosto de lançar projetos de código aberto para ajudar a 
-            comunidade mais ampla de desenvolvimento web. Abaixo estão dois dos 
-            meus lançamentos mais populares.</h4>
-        <ul id="image-list">
-            <li>
-                <a href="https://play.google.com/store/apps/developer?id=Francivaldo" target="_blank">
-                    <div>
-                        <img src="assets/log-play-store.svg">
+            <h1>Portifolio</h1>
+            <h4>De vez em quando gosto de lançar projetos de código aberto para ajudar a 
+                comunidade mais ampla de desenvolvimento web. Abaixo estão dois dos 
+                meus lançamentos mais populares.</h4>
+        <div>
+            <button id="prev-btn"><</button>
+            <ul id="image-list">
+                <!-- <li>
+                    <a href="https://play.google.com/store/apps/developer?id=Francivaldo" target="_blank">
                         <div>
-                            <h1>Aplicativos</h1>
-                            <img src="assets/text-play-store.svg" alt="">
+                            <img src="assets/log-play-store.svg">
+                            <div>
+                                <h1>Aplicativos</h1>
+                                <img src="assets/text-play-store.svg" alt="">
+                            </div>
                         </div>
-                    </div>
-                </a>
-            </li>
-        </ul>
+                    </a>
+                </li> -->
+            </ul>
+            <button id="next-btn">></button>
+        </div>
     </section>
     <section id="botton">
         <img width="24px" height="24px" src="assets/logo.svg">
