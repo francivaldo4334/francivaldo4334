@@ -1,6 +1,6 @@
 document.addEventListener('DOMContentLoaded', function() {
     const listImageContainer = document.getElementById('image-list');
-    fetch('https://api.github.com/users/francivaldo4334/repos?type=public&sort=updated&per_page=100')
+    fetch('https://api.github.com/users/francivaldo4334/repos?type=public&sort=updated&per_page=10')
         .then(response => {
             if (!response.ok) {
                 throw new Error('Erro ao obter os repositórios do usuário');
@@ -15,7 +15,8 @@ document.addEventListener('DOMContentLoaded', function() {
                 const a = document.createElement('a');
                 const img = document.createElement('img');
                 img.src = url;
-                a.href = repo.html_url
+                a.href = repo.html_url;
+                a.target = "_blank";
                 a.appendChild(img)
                 itemImg.appendChild(a);
                 listImageContainer.appendChild(itemImg);
