@@ -273,6 +273,21 @@ h1,h2,h3,h4,h5{
     </style>
 </head>
 <body>
+    <script>
+        const copyContent = async () => {
+        try {
+            await navigator.clipboard.writeText("francis.seu.dev");
+            const notificationElement = document.getElementById('copiedNotification');
+            notificationElement.style.display = 'block';
+            setTimeout(() => {
+                notificationElement.style.display = 'none';
+            }, 2000);
+            console.log('Nome de usuario copiado.');
+            } catch (err) {
+                console.error('falha ou copiar: ', err);
+            }
+        }
+    </script>
     <div id="topbar">
         <ul>
             <li><a href="#cover">Inicio</a></li>
@@ -386,21 +401,6 @@ h1,h2,h3,h4,h5{
     <div id="copiedNotification" class="copied-notification">
         Nome de usuario copiado para a área de transferência!
     </div>
-    <script>
-        const copyContent = async () => {
-        try {
-            await navigator.clipboard.writeText("francis.seu.dev");
-            const notificationElement = document.getElementById('copiedNotification');
-            notificationElement.style.display = 'block';
-            setTimeout(() => {
-                notificationElement.style.display = 'none';
-            }, 2000);
-            console.log('Nome de usuario copiado.');
-            } catch (err) {
-                console.error('falha ou copiar: ', err);
-            }
-        }
-    </script>
     <script src="script.js"></script>
 </body>
 </html>
