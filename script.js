@@ -29,7 +29,10 @@ function getListByPage(page){
                 const a = document.createElement('a');
                 const img = document.createElement('img');
                 img.src = url;
-                a.href = repo.html_url;
+                if(repo.homepage != null)
+                    a.href = repo.homepage
+                else
+                    a.href = repo.html_url;
                 a.target = "_blank";
                 a.appendChild(img)
                 itemImg.appendChild(a);
