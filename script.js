@@ -1,17 +1,3 @@
-const copyContent = async () => {
-try {
-    await navigator.clipboard.writeText("francis.seu.dev");
-    const notificationElement = document.getElementById('copiedNotification');
-    notificationElement.style.display = 'block';
-    setTimeout(() => {
-        notificationElement.style.display = 'none';
-    }, 2000);
-    console.log('Nome de usuario copiado.');
-    } catch (err) {
-        console.error('falha ou copiar: ', err);
-    }
-}
-
 document.addEventListener('DOMContentLoaded', function() {
     const listImageContainer = document.getElementById('image-list');
     fetch('https://api.github.com/users/francivaldo4334/repos?type=public&sort=updated&per_page=100')
