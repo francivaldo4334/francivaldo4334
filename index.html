@@ -276,7 +276,7 @@ h1,h2,h3,h4,h5{
     <script>
         const copyContent = async () => {
         try {
-            await navigator.clipboard.writeText("francis.seu.dev");
+            navigator.clipboard.writeText ("francis.seu.dev");
             const notificationElement = document.getElementById('copiedNotification');
             notificationElement.style.display = 'block';
             setTimeout(() => {
