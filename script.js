@@ -1,10 +1,10 @@
-
 const prevButton = document.getElementById('prev-btn');
 const nextButton = document.getElementById('next-btn');
 const listImageContainer = document.getElementById('image-list');
 let currentPage = 1;
 let totalPages = 0;
 let maxItenPage = 6;
+const readmeUrl = 'https://raw.githubusercontent.com/francivaldo4334/francivaldo4334/main/README.md';
 function getListByPage(page){
     if(window.innerWidth < 769){
         maxItenPage = 30
@@ -77,7 +77,19 @@ function setupPagination() {
         }
         console.log(currentPage);
     });
-  }
+}
+async function fetchAndRenderReadme() {
+    try {
+        const response = await fetch(readmeUrl);
+        const readmeText = await response.text();
+        const converter = new showdown.Converter();
+        const html = converter.makeHtml(readmeText);
+        document.getElementById('readme-content').innerHTML = html;
+    } catch (error) {
+        console.error('Erro ao buscar o README:', error);
+    }
+}
+fetchAndRenderReadme();
 loadTotalPage()
 getListByPage(1)
 setupPagination()
