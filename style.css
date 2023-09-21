@@ -195,17 +195,6 @@
         align-items: center;
         margin-right: 1em;
     }
-    #gitPainel{
-        display: inline-block;
-        margin: 1em 0 1em 0;
-        height: 40%;
-    }
-    #gitPainel > img{
-        height: 180em;
-    }
-    #readme-content p{
-        font-size: 14px;
-    }
 }
 body{
     padding: 0;
