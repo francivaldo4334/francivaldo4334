@@ -195,6 +195,15 @@
         align-items: center;
         margin-right: 1em;
     }
+    #gitPainel{
+        margin: 0;
+        padding: 0;
+        height: 0;
+        visibility: hidden;
+    }
+    #readme-content p{
+        font-size: 14px;
+    }
 }
 body{
     padding: 0;
