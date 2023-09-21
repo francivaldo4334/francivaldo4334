@@ -79,16 +79,14 @@ function setupPagination() {
     });
 }
 async function fetchAndRenderReadme() {
-    if(window.innerWidth > 769){
-        try {
-            const response = await fetch(readmeUrl);
-            const readmeText = await response.text();
-            const converter = new showdown.Converter();
-            const html = converter.makeHtml(readmeText);
-            document.getElementById('readme-content').innerHTML = html;
-        } catch (error) {
-            console.error('Erro ao buscar o README:', error);
-        }
+    try {
+        const response = await fetch(readmeUrl);
+        const readmeText = await response.text();
+        const converter = new showdown.Converter();
+        const html = converter.makeHtml(readmeText);
+        document.getElementById('readme-content').innerHTML = html;
+    } catch (error) {
+        console.error('Erro ao buscar o README:', error);
     }
 }
 fetchAndRenderReadme();
