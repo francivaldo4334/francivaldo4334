@@ -24,8 +24,8 @@ ou dar uma olhada em meus trabalhos anteriores.
 Você também pode me encontrar em:
 <div style="display: inline_block">
   <br/>
-  <a target="_blank" href="mailto:contato@francivaldo.com.br"><img src="https://img.shields.io/badge/Gmail-D14836?style=for-the-badge&logo=gmail&logoColor=white"/></a>
   <a target="_blank" href="https://www.instagram.com/francivaldo.programador/"><img src="https://img.shields.io/badge/Instagram-%23E4405F.svg?style=for-the-badge&logo=Instagram&logoColor=white"/></a>
+  <a target="_blank" href="mailto:contato@francivaldo.com.br"><img src="https://img.shields.io/badge/Gmail-D14836?style=for-the-badge&logo=gmail&logoColor=white"/></a>
   <a target="_blank" href="https://www.linkedin.com/in/francivaldo-costa"><img src="https://img.shields.io/badge/linkedin-%230077B5.svg?style=for-the-badge&logo=linkedin&logoColor=white"/></a>
   <a target="_blank" href="https://play.google.com/store/apps/developer?id=Francivaldo"><img src="https://img.shields.io/badge/Google_Play-414141?style=for-the-badge&logo=google-play&logoColor=white"/></a>
   <a target="_blank" href="https://github.com/francivaldo4334"><img src="https://img.shields.io/badge/github-%23121011.svg?style=for-the-badge&logo=github&logoColor=white"/></a>
