@@ -11,7 +11,7 @@
 }
 @media(min-width: 769px) {
     #portifolio{
-        height: 100vh;
+        min-height: 100vh;
     }
     :root{
         --font-max:32px;
