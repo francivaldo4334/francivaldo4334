@@ -22,7 +22,7 @@
         margin-left: 8em;
     }
     #more{
-        height: 100vh;
+        min-height: 100vh;
         padding-top: 8em;
     }
     #topbar button{
@@ -131,7 +131,7 @@
         margin-left: 1em;
     }
     #more{
-        height: 100vh;
+        min-height: 100vh;
     }
     #topbar button{
         margin-right: var(--border-site);
@@ -183,6 +183,24 @@
     #portifolio div{
         border-top: #BBB 2px solid;
         padding: 0 30px 0 30px;
+    }
+    #readme-content > div img {
+        flex: 1;
+        width: 100%;
+        height: auto;
+    }
+    
+    #readme-content > div{
+        display: flex;
+        align-items: center;
+        margin-right: 1em;
+    }
+    #gitPainel{
+     display: flex;   
+     flex-direction: column;
+    }
+    #readme-content p{
+        font-size: 14px;
     }
 }
 body{
