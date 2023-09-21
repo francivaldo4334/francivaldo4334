@@ -11,7 +11,7 @@
 }
 @media(min-width: 769px) {
     #portifolio{
-        height: 100vh;
+        min-height: 100vh;
     }
     :root{
         --font-max:32px;
@@ -22,7 +22,7 @@
         margin-left: 8em;
     }
     #more{
-        height: 100vh;
+        min-height: 100vh;
         padding-top: 8em;
     }
     #topbar button{
@@ -131,7 +131,7 @@
         margin-left: 1em;
     }
     #more{
-        height: 100vh;
+        min-height: 100vh;
     }
     #topbar button{
         margin-right: var(--border-site);
@@ -183,6 +183,28 @@
     #portifolio div{
         border-top: #BBB 2px solid;
         padding: 0 30px 0 30px;
+    }
+    #readme-content > div img {
+        flex: 1;
+        width: 100%;
+        height: auto;
+    }
+    
+    #readme-content > div{
+        display: flex;
+        align-items: center;
+        margin-right: 1em;
+    }
+    #gitPainel{
+        display: inline-block;
+        margin: 1em 0 1em 0;
+        height: 40%;
+    }
+    #gitPainel > img{
+        height: 180em;
+    }
+    #readme-content p{
+        font-size: 14px;
     }
 }
 body{
