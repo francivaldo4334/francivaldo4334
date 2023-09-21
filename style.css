@@ -196,8 +196,12 @@
         margin-right: 1em;
     }
     #gitPainel{
-     display: flex;   
-     flex-direction: column;
+        display: inline-block;
+        margin: 1em 0 1em 0;
+        height: 40%;
+    }
+    #gitPainel > img{
+        height: 180em;
     }
     #readme-content p{
         font-size: 14px;
