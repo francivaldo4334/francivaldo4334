@@ -5,7 +5,7 @@ Amo programar e adoro concentrar meus esforços para criar soluções<br>
 que atendam as necessidades dos usuários.<br>
 Sinta-se à vontade para entrar em contato<br>
 ou dar uma olhada em meus trabalhos anteriores.
-<div style="display: inline_block">
+<div style="display: inline_block" id="gitPainel">
   <img height="180em" src="https://github-readme-stats.vercel.app/api?username=francivaldo4334&theme=algolia&show_icons=true"/>
   <img height="180em" src="https://github-readme-stats.vercel.app/api/top-langs?username=francivaldo4334&hide=html,scss,stylus,blade,jupyter%20notebook,python,css,shell,batchfile,dockerfile,typescript&theme=algolia&show_icons=true"/>
 </div>
