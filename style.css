@@ -189,6 +189,11 @@
         /* width: 100%; */
         height: auto;
     }
+    #readme-content > div > a > img {
+        flex: 1;
+        width: 100%;
+        height: auto;
+    }
     
     #readme-content > div{
         display: flex;
