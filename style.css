@@ -108,13 +108,13 @@
         --border-site: 2em;
     }
     a {
-        font-size: 12px;
+        font-size: 14px;
     }
     h1{
         font-size: 18px;
     }
     h4,h3{
-        font-size: 12px;
+        font-size: 14px;
     }
     #cover > img{
         width: 110px;
@@ -136,7 +136,7 @@
     #topbar button{
         margin-right: var(--border-site);
         padding: 8px;
-        font-size: 8px;
+        font-size: 10px;
         color: white;
         background-color: black;
         border-style: none;
