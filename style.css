@@ -133,8 +133,9 @@
         height: 110px;
     }
     #cover > ul > li{
-        width: 14px;
-        height: 14px;
+        width: 16px;
+        height: 16px;
+        margin: 1em;
     }
     #more > div > img{
         visibility: hidden;
