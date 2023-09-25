@@ -10,6 +10,11 @@
     border-radius: 5px;
 }
 @media(min-width: 769px) {
+    #portifolio > h4{
+        margin: 2em 0 var(--border-site) 8em;
+        font-weight: lighter;
+        white-space: pre-line;
+    }
     #topbar > ul{
         padding: 0;
         margin: 0 0 0 var(--border-site);
@@ -59,11 +64,6 @@
     }
     #portifolio > h1{
         margin: var(--border-site) 0 0 5em;
-    }
-    #portifolio > h4{
-        margin: 2em 0 var(--border-site) 8em;
-        font-weight: lighter;
-        white-space: pre-line;
     }
     #image-list{
         list-style: none;
@@ -163,7 +163,6 @@
     }
     #portifolio > h4{
         margin: 2em 2em var(--border-site) 2em;
-        font-weight: lighter;
         white-space: pre-line;
     }
     #image-list li > a > img{
