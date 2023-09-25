@@ -136,7 +136,7 @@
     #topbar button{
         margin-right: var(--border-site);
         padding: 8px;
-        font-size: 10px;
+        font-size: 8px;
         color: white;
         background-color: black;
         border-style: none;
@@ -165,7 +165,7 @@
         height: 7em;
     }
     #botton > div {
-        font-size: 12px;
+        font-size: 10px;
         margin: 0;
     }
     #image-list{
