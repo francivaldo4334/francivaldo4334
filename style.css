@@ -133,8 +133,8 @@
         height: 110px;
     }
     #cover > ul > li{
-        width: 16px;
-        height: 16px;
+        width: 14px;
+        height: 14px;
     }
     #more > div > img{
         visibility: hidden;
@@ -163,6 +163,7 @@
     }
     #portifolio > h4{
         margin: 2em 2em var(--border-site) 2em;
+        font-weight: lighter;
         white-space: pre-line;
     }
     #image-list li > a > img{
