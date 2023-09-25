@@ -10,6 +10,12 @@
     border-radius: 5px;
 }
 @media(min-width: 769px) {
+    #topbar > ul{
+        padding: 0;
+        margin: 0 0 0 var(--border-site);
+        list-style-type: none;
+        display: flex;
+    }
     #portifolio{
         min-height: 100vh;
     }
@@ -103,6 +109,12 @@
     }
 }
 @media(max-width: 769px) {
+    #topbar > ul{
+        padding: 0;
+        margin: 0;
+        list-style-type: none;
+        display: flex;
+    }
     :root{
         --font-max:18px;
         --border-site: 2em;
@@ -234,12 +246,6 @@ h1,h2,h3,h4,h5{
     background-color: #fff;
     align-items: end;
     height: var(--border-site);
-}
-#topbar > ul{
-    padding: 0;
-    margin: 0 0 0 var(--border-site);
-    list-style-type: none;
-    display: flex;
 }
 #topbar > ul > li > a{
     padding: 0 1em 0 1em;
