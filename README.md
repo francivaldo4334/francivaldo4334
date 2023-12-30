@@ -1,9 +1,9 @@
 # Francivaldo Costa Reis
 ### Luís Correia-PI
-Meu nome e **Francivaldo Costa Reis** e sou **Programador androide**!<br>
+Meu nome e **Francivaldo Costa Reis** e sou **Programador android**!<br>
 Amo programar e adoro concentrar meus esforços para criar soluções<br>
 que atendam as necessidades dos usuários.<br>
-Tenho experiência sólida no desenvolvimento de aplicações androide<br>
+Tenho experiência sólida no desenvolvimento de aplicações android<br>
 para os mais diversos nichos e necessidades.<br>
 #### Dê uma olhada em meus trabalhos disponiveis na play store e no github.
 ```
