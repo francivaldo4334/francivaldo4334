@@ -11,6 +11,7 @@ Plug 'Xuyuanp/nerdtree-git-plugin'
 Plug 'neoclide/coc.nvim', { 'branch' : 'release' }
 Plug 'honza/vim-snippets'
 Plug 'jiangmiao/auto-pairs'
+Plug 'catppuccin/nvim', { 'as': 'catppuccin' }
 call plug#end()
 
 
@@ -18,24 +19,36 @@ colorscheme sonokai
 let g:airline_theme = 'sonokai'
 let g:airline#extensions#tabline#enabled = 1
 let g:airline_powerline_fonts = 1
-nmap <silent> <C-a> :NERDTreeToggle<CR>
+nmap <silent> <A-1> :NERDTreeToggle<CR>
+nmap <silent> <A-2> :NERDTreeFind<CR>
 nmap ty :bn<CR>
 nmap tr :bp<CR>
 
+" Copiar, Cortar e Colar
+vnoremap <C-C> "+y
+vnoremap <C-X> "+x
+vnoremap <C-V> "+p
 
-let g:coc_glogal_extensions = [ 'coc-snippets', ]
+" Fechar janela
+nnoremap <c-4> :q<CR>
 
+" Abrir nova janela verticalmente
+" nnoremap <C-N> :vsplit<CR>
 
+" Abrir nova janela horizontalmente
+" nnoremap <C-M> :split<CR>
 
-function! HighlightWordUnderCursor()
-  if getline(".")[col(".")-1] !~# '[[:punct:][:blank:]]'
-    exec 'match' 'Search' '/\V\<' .expand('<cword>'). '\>/'
-  else
-    match none
-  endif
-endfunction
+let g:coc_glogal_extensions = [ 'coc-snippets', 'coc-kotlin']
 
-autocmd! CursorHold,CursorHoldI * call HighlightWordUnderCursor()
+" function! HighlightWordUnderCursor()
+"  if getline(".")[col(".")-1] !~# '[[:punct:][:blank:]]'
+"    exec 'match' 'Search' '/\V\<' .expand('<cword>'). '\>/'
+"  else
+"    match none
+"  endif
+" endfunction
+
+" autocmd! CursorHold,CursorHoldI * call HighlightWordUnderCursor()
 
 
 
