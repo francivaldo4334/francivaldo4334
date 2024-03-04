@@ -1,12 +1,14 @@
+NU nano 6.2                                                                           /home/devolper11/.config/nvim/init.vim                                                                                    
 call plug#begin('~/.vim/plugged')
-Plug 'preservim/nerdtree'   
+Plug 'preservim/nerdtree'
 Plug 'vim-airline/vim-airline'
 Plug 'vim-airline/vim-airline-themes'
 Plug 'ryanoasis/vim-devicons'
 Plug 'sheerun/vim-polyglot'
-Plug 'neoclide/coc.nvim', { 'branch' : 'release' }
+Plug 'ryanoasis/vim-devicons'
 Plug 'sainnhe/sonokai'
 Plug 'honza/vim-snippets'
+Plug 'neoclide/coc.nvim', {'branch': 'master', 'do': 'npm ci'}
 Plug 'jiangmiao/auto-pairs'
 Plug 'tiagofumo/vim-nerdtree-syntax-highlight'
 call plug#end()
@@ -20,3 +22,9 @@ vnoremap <C-X> "+x
 vnoremap <C-V> "+p
 nnoremap <C-N> :vsplit<CR>
 nnoremap <C-M> :split<CR>
+set encoding=UTF-8
+set autoindent
+set noexpandtab
+set tabstop=4
+set shiftwidth=4
+set autoindent noexpandtab tabstop=4 shiftwidth=4
