@@ -1,0 +1,14 @@
+source ~/.vimrc
+set scrolloff=5
+set incsearch
+map Q gq
+map <C-c> "+y
+map <C-v> "+p
+map <C-j> :tabp<CR>
+map <C-k> :tabn<CR>
+map <A-4> :q<CR>
+map <C-a> :ggVG
+
+Plug 'machakann/vim-highlightedyank'
+Plug 'tpope/vim-commentary'
+Plug 'preservim/nerdtree'
