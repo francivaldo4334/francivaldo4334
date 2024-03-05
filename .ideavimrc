@@ -7,8 +7,15 @@ map <C-v> "+p
 map <C-j> :tabp<CR>
 map <C-k> :tabn<CR>
 map <A-4> :q<CR>
-map <C-a> :ggVG
+map <C-a> :ggVG<CR>
 
 Plug 'machakann/vim-highlightedyank'
 Plug 'tpope/vim-commentary'
 Plug 'preservim/nerdtree'
+
+function! CreateComponent()
+   
+endfunction
+
+command Cmp :call CreateComponent()
+map <C-0> :Cmp<CR>
