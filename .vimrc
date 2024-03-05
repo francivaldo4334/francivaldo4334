@@ -14,7 +14,7 @@ inoremap <silent><expr> <Tab> pumvisible() ? "\<C-n>" : "\<Tab>"
 nnoremap <C-a> ggVG
 nnoremap <C-z> u
 inoremap <C-z> <esc>ui
-nnoremap <C-c> "+y
+vnoremap <C-c> "+y
 nnoremap <C-s> :w<CR>
 inoremap <C-s> <esc>:w<CR>
 nnoremap <A-4> :qa<CR>
@@ -73,7 +73,7 @@ function! CheckOpenTerminal()
 	if !terminal_open
 		:split | :term
 		:resize 8
-	endif
+	endif•••••
 endfunction
 function! KeyTerminal()
 	let containsTerminal = HasActiveTerminal('terminal')
