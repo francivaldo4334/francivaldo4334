@@ -4,18 +4,39 @@ set incsearch
 map Q gq
 map <C-c> "+y
 map <C-v> "+p
-map <C-j> :tabp<CR>
-map <C-k> :tabn<CR>
+map <A-j> :tabp<CR>
+map <A-k> :tabn<CR>
 map <A-4> :q<CR>
-map <C-a> :ggVG<CR>
+map <C-a> <esc>ggVG<CR>
+map <C-j> jjjjjjjjjj
+map <C-k> kkkkkkkkkk
 
 Plug 'machakann/vim-highlightedyank'
 Plug 'tpope/vim-commentary'
 Plug 'preservim/nerdtree'
+vnoremap <C-h> :call EnhanceShiftRight()<CR>
+vnoremap <C-l> :call EnhanceShiftLeft()<CR>
 
-function! CreateComponent()
-   
+function! EnhanceShiftRight()
+    let save_start = line("'<")
+    let save_end = line("'>")
+    normal! V
+    '<,'>s/^/ /g
+    '<,'>s/^/ /g
+    '<,'>s/^/ /g
+    '<,'>s/^/ /g
+    call setpos('.', [0, save_start, 1, 0])
+    execute "normal! V" . save_start . "G" . save_end . "G"
+endfunction
+function! EnhanceShiftLeft()
+    let save_start = line("'<")
+    let save_end = line("'>")
+    normal! V
+    '<,'>s/^ //g
+    '<,'>s/^ //g
+    '<,'>s/^ //g
+    '<,'>s/^ //g
+    call setpos('.', [0, save_start, 1, 0])
+    execute "normal! V" . save_start . "G" . save_end . "G"
 endfunction
 
-command Cmp :call CreateComponent()
-map <C-0> :Cmp<CR>
