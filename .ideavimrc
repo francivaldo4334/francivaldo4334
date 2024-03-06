@@ -4,10 +4,13 @@ set incsearch
 map Q gq
 map <C-c> "+y
 map <C-v> "+p
-map <A-j> :tabp<CR>
-map <A-k> :tabn<CR>
+nnoremap <A-j> :tabp<CR>
+nnoremap <A-k> :tabn<CR>
+inoremap <A-j> <esc>:tabp<CR>i
+inoremap <A-k> <esci>:tabn<CR>i
 map <A-4> :q<CR>
-map <C-a> <esc>ggVG<CR>
+nnoremap <C-a> <esc>ggVG<CR>
+inoremap <C-a> <esc>ggVG<CR>
 map <C-j> jjjjjjjjjj
 map <C-k> kkkkkkkkkk
 
@@ -39,4 +42,3 @@ function! EnhanceShiftLeft()
     call setpos('.', [0, save_start, 1, 0])
     execute "normal! V" . save_start . "G" . save_end . "G"
 endfunction
-
