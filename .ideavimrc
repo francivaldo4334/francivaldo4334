@@ -5,10 +5,10 @@ map Q gq
 map <C-c> "+y
 map <C-v> "+p
 nnoremap <A-j> :tabp<CR>
-nnoremap <A-k> :tabn<CR>
-inoremap <A-j> <esc>:tabp<CR>i
-inoremap <A-k> <esci>:tabn<CR>i
+range-select)
+inoremap <A-k> <esc>:tabn<CR>i
 map <A-4> :q<CR>
+inoremap <A-4> <esc>:q<CR>
 nnoremap <C-a> <esc>ggVG<CR>
 inoremap <C-a> <esc>ggVG<CR>
 map <C-j> jjjjjjjjjj
