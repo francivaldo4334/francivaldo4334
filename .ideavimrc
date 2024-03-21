@@ -13,6 +13,7 @@ map <A-4> :q<CR>
 inoremap <A-4> <esc>:q<CR>
 map <C-j> jjjjjjjjjj
 map <C-k> kkkkkkkkkk
+map <C-A-X> <C-a>
 
 Plug 'machakann/vim-highlightedyank'
 Plug 'tpope/vim-commentary'
