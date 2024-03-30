@@ -63,6 +63,8 @@ bind = $mainMod, 9, workspace, 9
 bind = $mainMod, 0, workspace, 10
 bind = $mainMod $mainMod2, left, workspace, -1
 bind = $mainMod $mainMod2, right, workspace, +1
+bind = $mainMod $mainMod2 SHIFT, left, movetoworkspace, -1
+bind = $mainMod $mainMod2 SHIFT, right, movetoworkspace, +1
 # bind = $mainMod $mainMod2, left, movecurrentworkspacetomonitor, l
 # bind = $mainMod $mainMod2, P, movecurrentworkspacetomonitor, r
 bind = $mainMod SHIFT, 1, movetoworkspace, 1
@@ -95,7 +97,7 @@ bind = , XF86Lock, exec, hyprlock
 bind = , XF86Tools, exec, alacritty --class dotfiles-floating -e ~/dotfiles/hypr/settings/settings.sh
 
 # Passthrough SUPER KEY to Virtual Machine
-bind = $mainMod, P, submap, passthru
+bind = $mainMod2, P, submap, passthru
 submap = passthru
 bind = SUPER, Escape, submap, reset
 submap = reset
