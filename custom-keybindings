@@ -9,7 +9,7 @@ $mainMod2 = ALT
 
 # Applications
 bind = $mainMod $mainMod2, T, exec, ~/dotfiles/.settings/terminal.sh
-bind = $mainMod, B, exec, ~/dotfiles/.settings/browser.sh
+# bind = $mainMod, B, exec, ~/dotfiles/.settings/browser.sh
 bind = $mainMod, period, exec, emote
 
 # Windows
@@ -20,8 +20,10 @@ bind = $mainMod, E, exec, ~/dotfiles/.settings/filemanager.sh
 # bind = $mainMod SHIFT, T, exec, ~/dotfiles/hypr/scripts/toggleallfloat.sh
 # bind = $mainMod, J, togglesplit
 
-bind = $mainMod $mainMod2, H, movefocus, l
-bind = $mainMod $mainMod2, L, movefocus, r
+# bind = $mainMod $mainMod2, H, movefocus, l
+bind = $mainMod SHIFT, TAB, movefocus, l
+# bind = $mainMod $mainMod2, L, movefocus, r
+bind = $mainMod, TAB, movefocus, r
 bind = $mainMod $mainMod2, J, movefocus, u
 bind = $mainMod $mainMod2, K, movefocus, d
 
