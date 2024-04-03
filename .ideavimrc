@@ -5,9 +5,11 @@ vnoremap <C-S-k> :action MoveStatementUp<CR>
 map Q gq
 vnoremap <C-S-j> :action MoveStatementDown<CR>
 vnoremap <A-j> :action SelectNextOccurrence<CR>
+map <C-C-T> :action ActivateTerminalToolWindow<CR> :action Terminal.NewTab<CR>
 nnoremap <A-j> :tabp<CR>
 nnoremap <A-k> :tabn<CR>
 inoremap <A-j> <esc>:tabp<CR>
+vnoremap <A-j> :action SelectNextOccurrence<CR>
 inoremap <A-k> <esc>:tabn<CR>
 map <A-4> :q<CR>
 inoremap <A-4> <esc>:q<CR>
