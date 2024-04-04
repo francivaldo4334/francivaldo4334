@@ -12,24 +12,35 @@
 	bind = SUPER, B, exec, ~/dotfiles/.settings/browser.sh
 
 # Windows
-	bind = $mainMod2, F4, killactive
-	bind = SUPER, F11, fullscreen
-	bind = SUPER, E, exec, ~/dotfiles/.settings/filemanager.sh
-	bind = $mainMod TAB, H, movefocus, l
-	bind = $mainMod TAB, L, movefocus, r
-	bind = $mainMod TAB, J, movefocus, d
-	bind = $mainMod TAB, K, movefocus, u
+	# FOCUS WINDOW
+	submap=wfocus
+		bind=,H,movefocus,l
+		bind=,L,movefocus,r
+		bind=,J,movefocus,d
+		bind=,K,movefocus,u
+		bind=,escape,exec,hyprctl dispatch submap reset
 
-	bind = SUPER, left, movewindow, l
-	bind = SUPER, right, movewindow, r
-	bind = SUPER, down, movewindow, d
-	bind = SUPER, up, movewindow, u
-
-
-	bind = $mainMod SHIFT, L, resizeactive, 100 0
-	bind = $mainMod SHIFT, H, resizeactive, -100 0
-	bind = $mainMod SHIFT, J, resizeactive, 0 -100
-	bind = $mainMod SHIFT, K, resizeactive, 0 100
+	# RESIZE WINDOW
+	submap=wsize
+	 	bind=,H,resizeactive, -100 0
+	 	bind=,L,resizeactive, 100 0
+		bind=,J,resizeactive, 0 -100
+		bind=,K,resizeactive, 0 100
+		bind=,escape,exec,hyprctl dispatch submap reset
+	submap=reset
+	bind=CTRL,23,submap,wfocus
+	bind=CTRL,50,submap,wsize
+	bind=SUPER 64,23,submap,wmove
+	bind = ALT,F4,killactive
+	bind = SUPER,F11,fullscreen
+	# bind = SUPER,E,exec,~/dotfiles/.settings/filemanager.sh
+	bind = SUPER,E,exec,nautilus
+	# MOVE WINDOW
+	bind=SUPER,left,movewindow,l
+	bind=SUPER,right,movewindow,r
+	bind=SUPER,down,movewindow,d
+	bind=SUPER,up,movewindow,u
+	bind=SUPER,escape,exec,hyprctl dispatch submap reset
 
 # Actions
 	bind = $mainMod, PRINT, exec, ~/dotfiles/hypr/scripts/screenshot.sh
