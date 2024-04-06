@@ -4,51 +4,90 @@
 # ----------------------------------------------------- 
 
 # SUPER KEY
-	$mainMod = CTRL
-	$mainMod2 = ALT
+$mainMod = CTRL
+$mainMod2 = ALT
 
-# Applications
-	bind = $mainMod $mainMod2, T, exec, ~/dotfiles/.settings/terminal.sh
-	bind = SUPER, B, exec, ~/dotfiles/.settings/browser.sh
+	# MODO DESKTOP
 
-# Windows
-	# FOCUS WINDOW
-	submap=wfocus
+		submap=desktop
+		bind=,W,exec,~/dotfiles/hypr/scripts/wallpaper.sh
+		bind=,B,exec, ~/dotfiles/.settings/browser.sh
+		bind=,E,exec,nautilus
+		bind = ALT,F4,killactive
+		bind = SUPER ALT, F4, exec, wlogout
+		bind = $mainMod2, F2, exec, rofi -show drun -replace -i
+		bind = $mainMod, 1, workspace, 1
+		bind = $mainMod, 2, workspace, 2
+		bind = $mainMod, 3, workspace, 3
+		bind = $mainMod, 4, workspace, 4
+		bind = $mainMod, 5, workspace, 5
+		bind = $mainMod, 6, workspace, 6
+		bind = $mainMod, 7, workspace, 7
+		bind = $mainMod, 8, workspace, 8
+		bind = $mainMod, 9, workspace, 9
+		bind = $mainMod, 0, workspace, 10
+		bind = $mainMod $mainMod2, left, workspace, -1
+		bind = $mainMod $mainMod2, right, workspace, +1
+		bind = $mainMod $mainMod2 SHIFT, left, movetoworkspace, -1
+		bind = $mainMod $mainMod2 SHIFT, right, movetoworkspace, +1
+		bind = , XF86MonBrightnessUp, exec, brightnessctl -q s +10%
+		bind = , XF86MonBrightnessDown, exec, brightnessctl -q s 10%-
+		bind = , XF86AudioRaiseVolume, exec, pactl set-sink-volume @DEFAULT_SINK@ +5%
+		bind = , XF86AudioLowerVolume, exec, pactl set-sink-volume @DEFAULT_SINK@ -5%
+		bind = , XF86AudioMute, exec, wpctl set-mute @DEFAULT_AUDIO_SINK@ toggle
+		bind = , XF86AudioPlay, exec, playerctl play-pause
+		bind = , XF86AudioPause, exec, playerctl pause
+		bind = , XF86AudioNext, exec, playerctl next
+		bind = , XF86AudioPrev, exec, playerctl previous
+		bind = , XF86AudioMicMute, exec, pactl set-source-mute @DEFAULT_SOURCE@ toggle
+		bind = , XF86Calculator, exec, qalculate-gtk
+		bind = , XF86Lock, exec, hyprlock
+		bind = , XF86Tools, exec, alacritty --class dotfiles-floating -e ~/dotfiles/hypr/settings/settings.sh
+		bind=,F,submap,focus
+		bind=,R,submap,resize
+		bind=,catchall,submap,reset
+		bind=,Super_R,submap,reset
+
+	# MODO FOCAL
+
+		submap=focus
 		bind=,H,movefocus,l
 		bind=,L,movefocus,r
 		bind=,J,movefocus,d
 		bind=,K,movefocus,u
-		bind=,escape,exec,hyprctl dispatch submap reset
+		bind=,catchall,submap,
+		bind=,escape,submap,desktop
 
-	# RESIZE WINDOW
-	submap=wsize
+	# MODO REDIMENCIONAL
+
+		submap=resize
 	 	bind=,H,resizeactive, -100 0
 	 	bind=,L,resizeactive, 100 0
 		bind=,J,resizeactive, 0 -100
 		bind=,K,resizeactive, 0 100
-		bind=,escape,exec,hyprctl dispatch submap reset
+		bind=CTRL,H,movewindow,l
+		bind=CTRL,L,movewindow,r
+		bind=CTRL,J,movewindow,d
+		bind=CTRL,K,movewindow,u
+		bindm = $mainMod, mouse:272, movewindow
+		bindm = $mainMod, mouse:273, resizewindow
+		bind=,catchall,submap,desktop
+		bind=,escape,submap,desktop
+
+
 	submap=reset
-	bind=CTRL,23,submap,wfocus
-	bind=CTRL,50,submap,wsize
-	bind=SUPER 64,23,submap,wmove
+
+	bind=,Super_R,submap,desktop
+
 	bind = ALT,F4,killactive
 	bind = SUPER,F11,fullscreen
-	# bind = SUPER,E,exec,~/dotfiles/.settings/filemanager.sh
-	bind = SUPER,E,exec,nautilus
-	# MOVE WINDOW
-	bind=SUPER,left,movewindow,l
-	bind=SUPER,right,movewindow,r
-	bind=SUPER,down,movewindow,d
-	bind=SUPER,up,movewindow,u
-	bind=SUPER,escape,exec,hyprctl dispatch submap reset
 
-# Actions
+ 	bind = $mainMod $mainMod2, T, exec, ~/dotfiles/.settings/terminal.sh
+
 	bind = $mainMod, PRINT, exec, ~/dotfiles/hypr/scripts/screenshot.sh
 	bind = SUPER ALT, F4, exec, wlogout
-	bind = SUPER, W, exec, ~/dotfiles/hypr/scripts/wallpaper.sh
 	bind = $mainMod2, F2, exec, rofi -show drun -replace -i
 
-# Workspaces
 	bind = $mainMod, 1, workspace, 1
 	bind = $mainMod, 2, workspace, 2
 	bind = $mainMod, 3, workspace, 3
@@ -64,7 +103,10 @@
 	bind = $mainMod $mainMod2 SHIFT, left, movetoworkspace, -1
 	bind = $mainMod $mainMod2 SHIFT, right, movetoworkspace, +1
 
-# Fn keys
+	bind=CTRL,TAB,movefocus,r
+
+	# Fn keys
+
 	bind = , XF86MonBrightnessUp, exec, brightnessctl -q s +10%
 	bind = , XF86MonBrightnessDown, exec, brightnessctl -q s 10%-
 	bind = , XF86AudioRaiseVolume, exec, pactl set-sink-volume @DEFAULT_SINK@ +5%
@@ -79,8 +121,10 @@
 	bind = , XF86Lock, exec, hyprlock
 	bind = , XF86Tools, exec, alacritty --class dotfiles-floating -e ~/dotfiles/hypr/settings/settings.sh
 
-# Passthrough SUPER KEY to Virtual Machine
-	bind = $mainMod2, P, submap, passthru
-	submap = passthru
-	bind = SUPER, Escape, submap, reset
-	submap = reset
+	# Passthrough SUPER KEY to Virtual Machine
+
+	# bind = $mainMod2, P, submap, passthru
+	# submap = passthru
+	# bind = SUPER, Escape, submap, reset
+
+
