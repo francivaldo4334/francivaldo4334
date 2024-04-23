@@ -1,0 +1,27 @@
+import sqtr,parse from Math
+import Math.Sum
+class Main(n0:bit,n1:Bytes,n2:Char,n3:Int,n4:Float,n5:Double,n6:Long,n7:String,n8:Boolean){
+   assert(n0,'^[0-1]$')//Error
+   assert(n2,'[a-z]')
+   entry {
+
+   }
+   blockCcharp = Function(
+       language: 'C#',
+       name: 'executeCcharpBlock',
+       block: {},
+       response: Int,
+       parses: []
+   )
+   customBinary:bit[6] = bit[0,0,0,1,0,1]
+   fun myFunction():Int{
+       static lambda:Function
+       lambda = (){}
+       print(lambda.type)
+       // Block
+       lambda = Function(name:'myfunctionName',block:{},thead:Thread.Main)
+       lambda.execute()
+       lambda = 0 //Error
+       return 0
+   }
+}
