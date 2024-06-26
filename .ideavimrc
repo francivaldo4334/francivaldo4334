@@ -2,6 +2,8 @@ source ~/.vimrc
 set scrolloff=5
 set incsearch
 map Q gq
+map <C-Z> :action $Undo<CR>
+imap <C-Z> <esc>:action $Undo<CR>
 map <C-S-K> :action MoveStatementUp<CR>
 imap <C-S-K> :action MoveStatementUp<CR>
 map <C-S-J> :action MoveStatementDown<CR>
@@ -15,8 +17,6 @@ map <C-Q> :action QuickJavaDoc<CR>
 imap <C-Q> :action QuickJavaDoc<CR>
 map <C-V> :action EditorPaste<CR>
 imap <C-V> :action EditorPaste<CR>
-map <C-Z> :action $Undo<CR>
-imap <C-Z> <esc>:action $Undo<CR>
 map <C-S-Z> :action $Redo<CR>
 imap <C-S-Z> <esc>:action $Redo<CR>
 map <C-A> :action $SelectAll<CR>
@@ -34,6 +34,8 @@ map <A-4> :q<CR>
 imap <A-4> <esc>:q<CR>
 map <A-P> <C-X>
 map <A-N> <C-A>
+nmap <S-J> jjjjjjjjjj
+nmap <S-K> kkkkkkkkkk
 Plug 'machakann/vim-highlightedyank'
 Plug 'tpope/vim-commentary'
 Plug 'preservim/nerdtree'
