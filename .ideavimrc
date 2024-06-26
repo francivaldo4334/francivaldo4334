@@ -33,7 +33,7 @@ inoremap <A-k> <esc>:tabn<CR>
 map <A-4> :q<CR>
 imap <A-4> <esc>:q<CR>
 map <A-P> <C-X>
-map <A-N> <C-A>
+nnoremap <A-N> <C-A>
 nmap <S-J> jjjjjjjjjj
 nmap <S-K> kkkkkkkkkk
 Plug 'machakann/vim-highlightedyank'
