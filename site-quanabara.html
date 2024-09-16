@@ -23,7 +23,6 @@
         flex-grow:1;
       }
       .acento {
-        background: #0000EE;
         color: #FFFFFF;
         padding:4px;
         font-size:12px;
@@ -31,6 +30,12 @@
         text-align: center;
         flex-grow:1;
         margin: 5px;
+      }
+      .ocupado {
+        background: #FF0000;
+      }
+      .desocupado {
+        background: #0000EE;
       }
       #corredor {
         background: #AAA;
@@ -76,14 +81,14 @@
         for (let it = 0; it <= 44; it += 4) {
           conteudo1 += `
           <div class="par_de_acentos">
-            <div class="acento" id="${it}">Desocupado</div>
-            <div class="acento" id="${it+1}">Desocupado</div>
+            <div class="acento desocupado" id="${it}">Desocupado</div>
+            <div class="acento desocupado" id="${it+1}">Desocupado</div>
           </div>           
           `;
           conteudo2 += `
-          <div class="par_de_acentos">
-            <div class="acento" id="${it+2}">Desocupado</div>
-            <div class="acento" id="${it+3}">Desocupado</div>
+          <div class="par_de_acentos ">
+            <div class="acento desocupado" id="${it+2}">Desocupado</div>
+            <div class="acento desocupado" id="${it+3}">Desocupado</div>
           </div>           
           `;
         }
