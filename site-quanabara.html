@@ -5,58 +5,60 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title></title>
     <link href="css/style.css" rel="stylesheet">
+    <style>
+      #acentos {
+        display: flex;
+        flex-direction: column;
+        width: 100%;
+      }
+      .fila_de_acentos {
+        width: 100%;
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+      }
+      .par_de_acentos{
+        display: flex;
+        flex-direction: column;
+        flex-grow:1;
+      }
+      .acento {
+        background: #0000EE;
+        color: #FFFFFF;
+        padding:4px;
+        font-size:12px;
+        border: 2px solid #CCCCFF;
+        text-align: center;
+        flex-grow:1;
+        margin: 5px;
+      }
+      #corredor {
+        background: #AAA;
+        display: flex;
+        justify-content: center;
+        flex-grow:1;
+        margin: 5px;
+      }
+    </style>
   </head>
   <body>
       <div id="acentos">
-        <div class="fila_de_acentos">
-          <div class="acento" id="1">Desocupado<div/>
-          <div class="acento" id="2">Desocupado<div/>
-          <div class="acento" id="3">Desocupado<div/>
-          <div class="acento" id="4">Desocupado<div/>
-          <div class="acento" id="5">Desocupado<div/>
-          <div class="acento" id="6">Desocupado<div/>
-          <div class="acento" id="7">Desocupado<div/>
-          <div class="acento" id="8">Desocupado<div/>
-          <div class="acento" id="9">Desocupado<div/>
-          <div class="acento" id="10">Desocupado<div/>
-          <div class="acento" id="11">Desocupado<div/>
-          <div class="acento" id="12">Desocupado<div/>
-          <div class="acento" id="13">Desocupado<div/>
-          <div class="acento" id="14">Desocupado<div/>
-          <div class="acento" id="15">Desocupado<div/>
-          <div class="acento" id="16">Desocupado<div/>
-          <div class="acento" id="17">Desocupado<div/>
-          <div class="acento" id="18">Desocupado<div/>
-          <div class="acento" id="19">Desocupado<div/>
-          <div class="acento" id="20">Desocupado<div/>
-          <div class="acento" id="21">Desocupado<div/>
-          <div class="acento" id="22">Desocupado<div/>
-        <div/>
-        <div class="fila_de_acentos">
-          <div class="acento" id="23">Desocupado<div/>
-          <div class="acento" id="24">Desocupado<div/>
-          <div class="acento" id="25">Desocupado<div/>
-          <div class="acento" id="26">Desocupado<div/>
-          <div class="acento" id="27">Desocupado<div/>
-          <div class="acento" id="28">Desocupado<div/>
-          <div class="acento" id="29">Desocupado<div/>
-          <div class="acento" id="30">Desocupado<div/>
-          <div class="acento" id="31">Desocupado<div/>
-          <div class="acento" id="32">Desocupado<div/>
-          <div class="acento" id="33">Desocupado<div/>
-          <div class="acento" id="34">Desocupado<div/>
-          <div class="acento" id="35">Desocupado<div/>
-          <div class="acento" id="36">Desocupado<div/>
-          <div class="acento" id="37">Desocupado<div/>
-          <div class="acento" id="38">Desocupado<div/>
-          <div class="acento" id="39">Desocupado<div/>
-          <div class="acento" id="40">Desocupado<div/>
-          <div class="acento" id="41">Desocupado<div/>
-          <div class="acento" id="42">Desocupado<div/>
-          <div class="acento" id="43">Desocupado<div/>
-          <div class="acento" id="44">Desocupado<div/>
-        <div/>
-      <div/>
+        <div class="fila_de_acentos" id="fa1">
+          <div>
+            <div class="acento" id="1">Desocupado</div>
+            <div class="acento" id="2">Desocupado</div>
+          </div>
+        </div>
+        <div id="corredor">
+          <h3>Corredor</h3>
+        </div>
+        <div class="fila_de_acentos" id="fa2">
+          <div> 
+            <div class="acento" id="23">Desocupado</div>
+            <div class="acento" id="24">Desocupado</div>
+          </div>
+        </div>
+      </div>
       <div>
         <h1>
           Total de acentos livres:<span id="total_livres">0<span/>
@@ -64,6 +66,31 @@
         <h1>
           Total de acentos venditos:<span id="total_vendidos">0<span/>
         </h1>
-      <div/>
+      </div>
+    <script>
+      function adicionaAcentos() {
+        const fila1 = document.getElementById("fa1")
+        const fila2 = document.getElementById("fa2")
+        let conteudo1 = '';
+        let conteudo2 = '';
+        for (let it = 0; it <= 44; it += 4) {
+          conteudo1 += `
+          <div class="par_de_acentos">
+            <div class="acento" id="${it}">Desocupado</div>
+            <div class="acento" id="${it+1}">Desocupado</div>
+          </div>           
+          `;
+          conteudo2 += `
+          <div class="par_de_acentos">
+            <div class="acento" id="${it+2}">Desocupado</div>
+            <div class="acento" id="${it+3}">Desocupado</div>
+          </div>           
+          `;
+        }
+        fila1.innerHTML = conteudo1
+        fila2.innerHTML = conteudo2
+      }
+      adicionaAcentos()
+    </script>
   </body>
 </html>
