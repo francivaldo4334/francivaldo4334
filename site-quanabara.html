@@ -69,33 +69,122 @@
           Total de acentos livres:<span id="total_livres">0<span/>
         </h1>
         <h1>
-          Total de acentos venditos:<span id="total_vendidos">0<span/>
+          Total de acentos vendidos:<span id="total_vendidos">0<span/>
         </h1>
       </div>
     <script>
+        const poltronas = [];
+        const poltronasValor = [];
+        const poltronasDisponiveis = [];
+        for (let i = 0; i <= 45; i++) {
+            poltronas.push(i);
+            poltronasDisponiveis.push(true);
+            if (i <= 4){
+                poltronasValor.push(100)
+                /*
+                Além das 4 poltronas da frente serem prioridade, elas estão mais distantes do banheiro no ônibus, logo são mais caras.
+                */
+            } else {
+                poltronasValor.push(100-(Math.round((i*2)/10)*10));
+                /* 
+                1. Nessa linha eu vou multiplicar i por 2 e subtrair por 100 para conseguir um valor de 90 até 10.
+                Mas fazendo dessa forma as poltronas da mesma fileira teriam valores diferentes entre si, e pra mim faz mais sentido que todas as poltronas da mesma fileira tenham o mesmo valor.
+                2. Então eu dividi por 10 e arredondei, para logo em seguida transformar em um múltiplo de 10 que corresponda ao valor de cada poltrona em relação à distância do banheiro (quanto mais próximo do banheiro, mais barato).
+                3. Após tudo isso eu consegui o valor pelo qual a passagem vai ser diminuída, então eu subtraio 100 (o valor mais caro) pelo resultado.
+                */
+            }
+        }
+        function _venderPassagem(poltronaUsuario) {
+            if (poltronaUsuario < 1 || poltronaUsuario > 45) {
+                return "Invalida"
+            } else if (poltronasDisponiveis[poltronaUsuario] == false){
+                return "Ocupada"
+            } else {
+                poltronasDisponiveis[poltronaUsuario] = false; 
+                return `Passagem vendida com sucesso.\nPoltrona: ${poltronas[poltronaUsuario]}\nValor: R$${poltronasValor[poltronaUsuario]},00`
+            }
+
+        }
+        function _exibirPoltronasDisponiveis() {
+            let disponiveis = 0; 
+            for (let i = 1; i < poltronasDisponiveis.length; i++){
+                if (poltronasDisponiveis[i] == true){
+                    disponiveis ++;
+                }
+            }
+            return disponiveis
+        }
+        function _exibirTotalVendidas() {
+            let vendidas = 0;
+            for (let i = 1; i <= poltronasDisponiveis.length-1; i++){
+                if (poltronasDisponiveis[i] != true){
+                    vendidas += 1;
+                }
+            }
+            return vendidas
+        }
+    </script>
+    <script>
+      function exibirTotalVendidas(){
+        const span = document.getElementById("total_vendidos")
+        let vendidas = _exibirTotalVendidas()
+        span.innerHTML = vendidas
+      }
+      function exibirTotalDisponiveis() {
+        const span = document.getElementById("total_livres")
+        const disponiveis = _exibirPoltronasDisponiveis()
+        span.innerHTML = disponiveis
+     }
+      function venderPassagem(id){
+        const resultado = _venderPassagem(id)
+        const componentePoltrona = document.getElementById(id)
+        if (resultado === "Ocupada"){
+          alert("Poltrona ocupada")
+        }
+        else if (resultado === "Invalida") {
+          alert(resultado)
+        }
+        else {
+          componentePoltrona.className = "acento ocupado"
+          exibirTotalVendidas()
+          exibirTotalDisponiveis()
+          alert(resultado)
+        }
+      }
       function adicionaAcentos() {
         const fila1 = document.getElementById("fa1")
         const fila2 = document.getElementById("fa2")
         let conteudo1 = '';
         let conteudo2 = '';
-        for (let it = 0; it <= 44; it += 4) {
+        const button_template = (n) => {
+          return `<button onClick="venderPassagem(${n})" class="acento desocupado" id="${n}">${n}</button>`
+        }
+        for (let it = 1; it <= 44; it += 4) {
           conteudo1 += `
           <div class="par_de_acentos">
-            <div class="acento desocupado" id="${it}">Desocupado</div>
-            <div class="acento desocupado" id="${it+1}">Desocupado</div>
+            ${button_template(it)}
+            ${button_template(it + 1)}
           </div>           
           `;
           conteudo2 += `
           <div class="par_de_acentos ">
-            <div class="acento desocupado" id="${it+2}">Desocupado</div>
-            <div class="acento desocupado" id="${it+3}">Desocupado</div>
+            ${button_template(it + 2)}
+            ${button_template(it + 3)}
           </div>           
           `;
         }
+        conteudo2 += `
+        <div class="par_de_acentos ">
+          ${button_template(45)}
+        </div>           
+        `;
         fila1.innerHTML = conteudo1
         fila2.innerHTML = conteudo2
       }
+
       adicionaAcentos()
+      exibirTotalVendidas()
+      exibirTotalDisponiveis()
     </script>
   </body>
 </html>
