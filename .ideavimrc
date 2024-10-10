@@ -1,6 +1,11 @@
+" Fonte das configurações
 source ~/.vimrc
+
+" Configurações gerais
 set scrolloff=5
 set incsearch
+
+" Mapeamentos
 map Q gq
 map <C-Z> :action $Undo<CR>
 imap <C-Z> <esc>:action $Undo<CR>
@@ -26,16 +31,27 @@ imap <A-Tab> :action EditorUnindentSelection<CR>
 map <Tab> :action EditorTab<CR>
 imap <Tab> :action EditorTab<CR>
 map <C-T> :action ActivateTerminalToolWindow<CR> :action Terminal.NewTab<CR>
+nmap <Space>w :action ActivateProjectToolWindow<CR>
+nmap <Space>r :action Run<CR>
+
+" Navegação por tabs
 nnoremap <A-j> :tabp<CR>
 inoremap <A-j> <esc>:tabp<CR>
 nnoremap <A-k> :tabn<CR>
 inoremap <A-k> <esc>:tabn<CR>
+
+" Outros mapeamentos
 map <A-4> :q<CR>
 imap <A-4> <esc>:q<CR>
+map <Space>c :q<CR>
+imap <Space>c <esc>:q<CR>
 map <A-P> <C-X>
 nnoremap <A-N> <C-A>
 nmap <S-J> jjjjjjjjjj
 nmap <S-K> kkkkkkkkkk
+nnoremap <C-J> <S-J>
+
+" Plugins
 Plug 'machakann/vim-highlightedyank'
 Plug 'tpope/vim-commentary'
 Plug 'preservim/nerdtree'
