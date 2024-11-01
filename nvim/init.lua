@@ -55,3 +55,5 @@ require "polish"
 --     end
 -- }
 -- vim.cmd("colorscheme astrolight")
+vim.cmd("setlocal spell")
+
