@@ -1,0 +1,3 @@
+return {
+  'Verf/deepwhite.nvim',
+}

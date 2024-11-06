@@ -137,6 +137,9 @@ return {
         ga = {
           function() vim.lsp.buf.code_action() end,
           desc = "Code Action",
+        },
+        rn = {
+          function() vim.lsp.buf.rename() end,
         }
       },
     },
