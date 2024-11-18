@@ -85,7 +85,24 @@ return {
             }
           }
         }
-      }
+      },
+      volar = {
+        filetypes = { "typescript", "javascript", "javascriptreact", "typescriptreact", "vue", "json" },
+        init_options = {
+            typescript = {
+                serverPath = "/usr/local/lib/node_modules/typescript/lib/tsserver.js",
+            },
+        },
+        settings = {
+            volar = {
+                autoCompleteRefs = true,
+                validate = {
+                    template = true,
+                    style = true,
+                },
+            },
+        },
+      },
     },
     -- customize how language servers are attached
     handlers = {
