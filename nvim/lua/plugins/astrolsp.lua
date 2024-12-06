@@ -1,4 +1,4 @@
--- if true then return {} end -- WARN: REMOVE THIS LINE TO ACTIVATE THIS FILE
+if true then return {} end -- WARN: REMOVE THIS LINE TO ACTIVATE THIS FILE
 
 -- AstroLSP allows you to customize the features in AstroNvim's LSP configuration engine
 -- Configuration documentation can be found with `:h astrolsp`
@@ -45,64 +45,6 @@ return {
     ---@diagnostic disable: missing-fields
     config = {
       -- clangd = { capabilities = { offsetEncoding = "utf-8" } },
-      kotlin_language_server = {
-        settings = {
-            kotlin = {
-                auto_import = true,
-                completion = {
-                    insertSpaces = true,
-                    tabSize = 4
-                },
-                diagnostics = {
-                    enable = true,
-                    showUnused = false
-                }
-            }
-        },
-        init_options = {
-          allow_multiple_instances = false
-        }
-      },
-      biome = {
-        cmd = { "/home/higia/.local/share/nvim/mason/bin/biome", "lsp-proxy" },
-        autostart = true,
-        filetypes = {
-            "javascript", "javascriptreact", "json", "jsonc",
-            "typescript", "typescriptreact", "astro", "svelte", "vue", "css"
-        },
-        root_dir = require('lspconfig.util').root_pattern("package.json", "tsconfig.json", ".git"),
-        on_attach = function(client, bufnr)
-            -- Configurações de mapeamento podem ser adicionadas aqui
-        end,
-      },
-      pyright = {
-        settings = {
-          python = {
-            analysis = {
-              autoSearchPaths = true,
-              useLibraryCodeForTypes = true,
-              diagnosticMode = "workspace"
-            }
-          }
-        }
-      },
-      volar = {
-        filetypes = { "typescript", "javascript", "javascriptreact", "typescriptreact", "vue", "json" },
-        init_options = {
-            typescript = {
-                serverPath = "/usr/local/lib/node_modules/typescript/lib/tsserver.js",
-            },
-        },
-        settings = {
-            volar = {
-                autoCompleteRefs = true,
-                validate = {
-                    template = true,
-                    style = true,
-                },
-            },
-        },
-      },
     },
     -- customize how language servers are attached
     handlers = {
@@ -151,13 +93,6 @@ return {
             return client.supports_method "textDocument/semanticTokens/full" and vim.lsp.semantic_tokens ~= nil
           end,
         },
-        ga = {
-          function() vim.lsp.buf.code_action() end,
-          desc = "Code Action",
-        },
-        rn = {
-          function() vim.lsp.buf.rename() end,
-        }
       },
     },
     -- A custom `on_attach` function to be run after the default `on_attach` function

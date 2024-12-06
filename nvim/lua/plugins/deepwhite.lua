@@ -1,3 +1,0 @@
-return {
-  'Verf/deepwhite.nvim',
-}
