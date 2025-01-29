@@ -1,5 +1,3 @@
-if true then return {} end -- WARN: REMOVE THIS LINE TO ACTIVATE THIS FILE
-
 -- Customize Mason plugins
 
 ---@type LazySpec
@@ -12,6 +10,7 @@ return {
       ensure_installed = {
         "lua_ls",
         -- add more arguments for adding more language servers
+        "volar",
       },
     },
   },
@@ -23,6 +22,8 @@ return {
       ensure_installed = {
         "stylua",
         -- add more arguments for adding more null-ls sources
+        "eslint_d",
+        "prettier",
       },
     },
   },
@@ -33,6 +34,42 @@ return {
       ensure_installed = {
         "python",
         -- add more arguments for adding more debuggers
+        "node2",
+      },
+      handlers = {
+        function(source_name)
+          local dap = require "dap"
+          dap.adapters.node = {
+            type = "executable",
+            command = "node",
+            args = { "--inspect-brk" }, -- Ativa o modo de depuração
+          }
+
+          -- Configurações para depurar uma aplicação Vue com TypeScript
+          dap.configurations.typescript = {
+            {
+              name = "Launch Vue App",
+              type = "node", -- Usando o depurador nativo do Node
+              request = "launch",
+              program = "${workspaceFolder}/node_modules/.bin/vite", -- Ou o seu script npm
+              cwd = vim.fn.getcwd(),
+              sourceMaps = true,
+              protocol = "inspector",
+              console = "integratedTerminal",
+              runtimeExecutable = "node", -- Usando o Node.js para rodar
+              args = { "--inspect" }, -- Inicia o Node.js em modo de depuração
+            },
+            {
+              name = "Attach to Vue App",
+              type = "node", -- Usando o depurador nativo do Node
+              request = "attach",
+              processId = require("dap.utils").pick_process,
+              cwd = vim.fn.getcwd(),
+              sourceMaps = true,
+              protocol = "inspector",
+            },
+          }
+        end,
       },
     },
   },
