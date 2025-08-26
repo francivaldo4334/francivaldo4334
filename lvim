@@ -31,3 +31,5 @@ lvim.keys.normal_mode["<leader>P"] = "<Esc>:GitCommitToolPush<CR>"
 require("nvim-ts-autotag").setup({
   filetypes = { "html", "typescriptreact", "javascriptreact", "vue", "tsx"},
 })
+vim.opt.foldmethod="expr"
+vim.opt.foldexpr = "nvim_treesitter#foldexpr()"
