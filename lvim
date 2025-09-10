@@ -19,8 +19,20 @@ lvim.plugins = {
       },
       use_keymaps = true
     },
+  },
+  {
+    "catppuccin/nvim",
+    name = "catppuccin",
+    priority = 1000,
+    config = function()
+      require("catppuccin").setup({
+        flavour = "latte",
+        transparent_background = lvim.transparent_window,
+      })
+    end,
   }
 }
+lvim.colorscheme = "catppuccin"
 lvim.builtin["terminal"].open_mapping = "<c-t>"
 lvim.keys.normal_mode["<C-s>"] = ":w<CR>"
 lvim.keys.insert_mode["<C-s>"] = "<Esc>:w<CR>a"
